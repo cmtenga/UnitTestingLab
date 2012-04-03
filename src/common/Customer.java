@@ -68,6 +68,9 @@ public class Customer {
     }
 
     public void setZip(String zip) {
+         if(zip == null || zip.length()==0){
+            throw new IllegalArgumentException("zip cannot be null");
+        }
         this.zip = zip;
     }
 

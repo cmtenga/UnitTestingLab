@@ -67,4 +67,9 @@ public class CustomerTest {
         //for((Sring address: validAddresses)
         //customer.setAddress(null);
     }
+    @Test
+    public void validZipCode(){
+        Customer customer = new Customer();
+        customer.setZip("12456");
+    }
 }
