@@ -57,14 +57,14 @@ public class CustomerTest {
      */
     @Test
     public void validAddressShouldPass(){
-        String[] validAddresses = {
-            "",
-            "1234 Anywhere St",
-            "Street"
-        };
+//        String[] validAddresses = {
+//            "",
+//            "1234 Anywhere St",
+//            "Street"
+//        };
         Customer customer = new Customer();
         customer.setAddress("1234 Anywhere St"); 
-        //for((Sring address:validAddresses)
-        //customer.getAddress());
+        //for((Sring address: validAddresses)
+        //customer.setAddress(null);
     }
 }
