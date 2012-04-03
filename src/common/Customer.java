@@ -16,6 +16,7 @@ public class Customer {
     }
 
     public Customer(String name, String phone) {
+                
         this.phone = phone;
         this.name = name;
     }
@@ -36,6 +37,9 @@ public class Customer {
     }
 
     public void setCity(String city) {
+        if(city == null || city.length() ==0){
+            throw new IllegalArgumentException("city cannot be null");
+        } 
         this.city = city;
     }
 
@@ -68,7 +72,7 @@ public class Customer {
     }
 
     public void setZip(String zip) {
-         if(zip == null || zip.length()==0){
+         if(zip == null || zip.length()==0) {
             throw new IllegalArgumentException("zip cannot be null");
         }
         this.zip = zip;

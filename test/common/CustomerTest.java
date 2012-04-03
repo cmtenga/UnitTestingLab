@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
  */
 public class CustomerTest {
 
+    private Customer instance;
+
     public CustomerTest() {
     }
 
@@ -26,10 +28,12 @@ public class CustomerTest {
 
     @Before
     public void setUp() {
+        instance = new Customer();
     }
 
     @After
     public void tearDown() {
+        instance = null;
     }
 
     /**
@@ -37,39 +41,41 @@ public class CustomerTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void addressShouldNotBeNull() {
-        Customer customer = new Customer();
-        customer.setAddress(null);
-        
-       // assertNotNull(customer.getAddress());
+        //Customer customer = new Customer();
+        instance.setAddress(null);
+
+        // assertNotNull(customer.getAddress());
     }
 
     /**
      * This method tests the requirement that the address can not empty
      */
     @Test(expected = IllegalArgumentException.class)
-    
     public void addressShouldNotBeEmptyl() {
-         Customer customer = new Customer();
-        customer.setAddress("");
+        instance.setAddress("");
     }
+
     /**
-     * All valid address should pass
+     * All valid address should pass validation
      */
     @Test
-    public void validAddressShouldPass(){
-//        String[] validAddresses = {
-//            "",
-//            "1234 Anywhere St",
-//            "Street"
-//        };
-        Customer customer = new Customer();
-        customer.setAddress("1234 Anywhere St"); 
-        //for((Sring address: validAddresses)
-        //customer.setAddress(null);
+    public void validAddressShouldPass() {
+        instance.setAddress("1234 Anywhere St");
+        /**
+         * Zip should contain only 5 numbers
+         */
     }
+
     @Test
-    public void validZipCode(){
-        Customer customer = new Customer();
-        customer.setZip("12456");
+    public void validZipCodeShouldPass() {
+        instance.setZip("12345");
+        /**
+         * City name should not be null
+         */
+    }
+
+    @Test
+    public void validCityNameShouldPass() {
+        instance.setCity("Brookfield");
     }
 }
