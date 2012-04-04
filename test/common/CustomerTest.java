@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package common;
 
 import org.junit.*;
@@ -9,7 +5,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author cmtenga
+ * @author Cecilia Mtenga, cmtenga@my.wctc.edu
  */
 public class CustomerTest {
 
@@ -44,7 +40,7 @@ public class CustomerTest {
         //Customer customer = new Customer();
         instance.setAddress(null);
 
-        // assertNotNull(customer.getAddress());
+         //assertNotNull(instance.getAddress());
     }
 
     /**
@@ -58,15 +54,19 @@ public class CustomerTest {
     /**
      * All valid address should pass validation
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void validAddressShouldPass() {
         instance.setAddress("1234 Anywhere St");
         /**
-         * Zip should contain only 5 numbers
+         * Zip should not be null
          */
     }
-
-    @Test
+ @Test(expected = IllegalArgumentException.class)
+    public void validZipCodeShouldNotBeNull() {
+        instance.setZip(null);
+ }
+ 
+    @Test(expected = IllegalArgumentException.class)
     public void validZipCodeShouldPass() {
         instance.setZip("12345");
         /**
@@ -74,7 +74,7 @@ public class CustomerTest {
          */
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void validCityNameShouldPass() {
         instance.setCity("Brookfield");
     }

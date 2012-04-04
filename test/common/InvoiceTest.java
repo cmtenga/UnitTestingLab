@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package common;
 
 import java.util.Date;
@@ -11,9 +8,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Owner
+ * @author Cecilia Mtenga, cmtenga@my.wctc.edu
  */
 public class InvoiceTest {
+
+    private Invoice instance;
 
     public InvoiceTest() {
     }
@@ -28,9 +27,22 @@ public class InvoiceTest {
 
     @Before
     public void setUp() {
+        instance = new Invoice();
+        instance.setMinQtyForDiscount(10);
     }
 
     @After
     public void tearDown() {
+        instance = null;
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void customerInformationShouldNotBeNull() {
+        instance.setCustomer(null);
+
+    }
+     @Test(expected = IllegalArgumentException.class)
+     public void minDiscountQuantityShouldBe10(){
+         instance.setMinQtyForDiscount(7);
+     }
 }
