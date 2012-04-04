@@ -40,41 +40,41 @@ public class CustomerTest {
         //Customer customer = new Customer();
         instance.setAddress(null);
 
-         //assertNotNull(instance.getAddress());
+        //assertNotNull(instance.getAddress());
     }
 
     /**
      * This method tests the requirement that the address can not empty
      */
     @Test(expected = IllegalArgumentException.class)
-    public void addressShouldNotBeEmptyl() {
+    public void addressShouldNotBeEmpty() {
         instance.setAddress("");
     }
 
     /**
      * All valid address should pass validation
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void validAddressShouldPass() {
         instance.setAddress("1234 Anywhere St");
-        /**
-         * Zip should not be null
-         */
-    }
- @Test(expected = IllegalArgumentException.class)
-    public void validZipCodeShouldNotBeNull() {
-        instance.setZip(null);
- }
- 
-    @Test(expected = IllegalArgumentException.class)
-    public void validZipCodeShouldPass() {
-        instance.setZip("12345");
-        /**
-         * City name should not be null
-         */
     }
 
+    /**
+     * Zip should not be null
+     */
     @Test(expected = IllegalArgumentException.class)
+    public void validZipCodeShouldNotBeNull() {
+        instance.setZip(null);
+    }
+
+    @Test
+    public void validZipCodeShouldPass() {
+        instance.setZip("12345");
+    }
+    /**
+     * City name should not be empty
+     */
+    @Test
     public void validCityNameShouldPass() {
         instance.setCity("Brookfield");
     }

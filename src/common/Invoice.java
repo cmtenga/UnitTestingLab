@@ -96,6 +96,9 @@ public class Invoice {
     }
 
     public void setInvoiceNo(int invoiceNo) {
+          if(invoiceNo ==0){
+            throw new IllegalArgumentException("address cannot be null");
+        }
         this.invoiceNo = invoiceNo;
     }
 

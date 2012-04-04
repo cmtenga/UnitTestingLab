@@ -29,6 +29,7 @@ public class InvoiceTest {
     public void setUp() {
         instance = new Invoice();
         instance.setMinQtyForDiscount(10);
+        
     }
 
     @After
@@ -45,4 +46,8 @@ public class InvoiceTest {
      public void minDiscountQuantityShouldBe10(){
          instance.setMinQtyForDiscount(7);
      }
+      @Test(expected = IllegalArgumentException.class)
+     public void invoiceNoShouldNotBeNull(){
+         instance.setInvoiceNo(0);
+}
 }
