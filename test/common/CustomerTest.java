@@ -71,11 +71,21 @@ public class CustomerTest {
     public void validZipCodeShouldPass() {
         instance.setZip("12345");
     }
+
     /**
      * City name should not be empty
      */
     @Test
     public void validCityNameShouldPass() {
-        instance.setCity("Brookfield");
+        String[] validCity = {
+            "a", "xxx", "xxxxxx"
+        };
+        try {
+            for (String vc : validCity) {
+                instance.setCity(vc);
+            }
+        } catch (Exception e) {
+            fail("Throw exception");
+        }
     }
 }
