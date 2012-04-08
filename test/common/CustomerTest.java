@@ -25,6 +25,7 @@ public class CustomerTest {
     @Before
     public void setUp() {
         instance = new Customer();
+        
     }
 
     @After
@@ -54,7 +55,7 @@ public class CustomerTest {
     /**
      * All valid address should pass validation
      */
-    @Test
+    @Test 
     public void validAddressShouldPass() {
         instance.setAddress("1234 Anywhere St");
     }
@@ -85,7 +86,7 @@ public class CustomerTest {
                 instance.setCity(vc);
             }
         } catch (Exception e) {
-            fail("Throw exception");
+            fail("Legal value was rejected, not good!");
         }
     }
 }

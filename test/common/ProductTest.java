@@ -9,9 +9,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Owner
+ * @author Cecilia Mtenga
  */
 public class ProductTest {
+
+    private Product instance;
 
     public ProductTest() {
     }
@@ -26,9 +28,23 @@ public class ProductTest {
 
     @Before
     public void setUp() {
+        instance = new Product();
     }
 
     @After
     public void tearDown() {
+        instance = null;
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void prodIdInformationShouldNotBeNull() {
+        instance.setProdId(null);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void productDescriptionShouldNotBeNull() {
+        instance.setDescription(null);
+    }
+    
 }

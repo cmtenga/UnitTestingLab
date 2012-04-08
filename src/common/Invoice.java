@@ -95,15 +95,8 @@ public class Invoice {
         this.dueDate = dueDate;
     }
 
-    public void setInvoiceNo(int invoiceNo) {
-          if(invoiceNo ==0){
-            throw new IllegalArgumentException("address cannot be null");
-        }
-        this.invoiceNo = invoiceNo;
-    }
-
     public void setMinQtyForDiscount(double minQtyForDiscount) {
-        if(minQtyForDiscount < 10){
+        if (minQtyForDiscount < 10) {
             throw new IllegalArgumentException("Discount is provided for "
                     + "minimum quantity of 10 items");
         }

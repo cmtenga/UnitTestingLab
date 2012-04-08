@@ -24,6 +24,9 @@ public class Product {
     }
 
     public void setDescription(String description) {
+        if(description == null || description.length()==0){
+           throw new IllegalArgumentException("Description cannot be null or empty");  
+        }
         this.description = description;
     }
 
@@ -32,6 +35,10 @@ public class Product {
     }
 
     public void setProdId(String prodId) {
+    if(prodId == null || prodId.length()==0)  {
+        throw new IllegalArgumentException("productId cannot be null or empty");
+    }          
+
         this.prodId = prodId;
     }
 

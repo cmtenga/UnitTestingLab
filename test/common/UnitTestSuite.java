@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package common;
 
 import org.junit.After;
@@ -13,10 +10,14 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author cmtenga
+ * @author Cecilia Mtenga, cmtenga@my.wctc.edu
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({common.InvoiceTest.class, common.CustomerTest.class, common.ProductTest.class, common.LineItemTest.class})
+@Suite.SuiteClasses({common.InvoiceTest.class, 
+    common.CustomerTest.class, 
+    common.ProductTest.class, 
+    common.LineItemTest.class
+})
 public class UnitTestSuite {
 
     @BeforeClass

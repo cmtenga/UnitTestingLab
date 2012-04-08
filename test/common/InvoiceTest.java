@@ -1,4 +1,3 @@
-
 package common;
 
 import java.util.Date;
@@ -28,26 +27,27 @@ public class InvoiceTest {
     @Before
     public void setUp() {
         instance = new Invoice();
-        instance.setMinQtyForDiscount(10);
-        
     }
 
     @After
     public void tearDown() {
         instance = null;
+    
+    /**
+     * customer information should not be null
+     */
     }
-
     @Test(expected = IllegalArgumentException.class)
     public void customerInformationShouldNotBeNull() {
         instance.setCustomer(null);
 
     }
-     @Test(expected = IllegalArgumentException.class)
-     public void minDiscountQuantityShouldBe10(){
-         instance.setMinQtyForDiscount(7);
-     }
-      @Test(expected = IllegalArgumentException.class)
-     public void invoiceNoShouldNotBeNull(){
-         instance.setInvoiceNo(0);
-}
+    /**
+     * minimum quantity qualified for discount should be >= 10
+     */
+
+    @Test(expected = IllegalArgumentException.class)
+    public void minDiscountQuantityShouldBe10() {
+        instance.setMinQtyForDiscount(8);
+    }
 }
