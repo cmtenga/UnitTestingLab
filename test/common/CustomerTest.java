@@ -68,7 +68,7 @@ public class CustomerTest {
         instance.setZip(null);
     }
 
-    @Test
+    @Test 
     public void validZipCodeShouldPass() {
         instance.setZip("12345");
     }

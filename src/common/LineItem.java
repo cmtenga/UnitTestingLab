@@ -14,7 +14,7 @@ public class LineItem {
     private double unitCost;
     private double qty;
     private double extPrice;
-
+ private static final double MAX_QUANTITY = 50;
     public LineItem() {
 
     }
@@ -87,6 +87,9 @@ public class LineItem {
     }
 
     public void setQty(double qty) {
+         if (qty <= 0 || qty > MAX_QUANTITY) {
+            throw new NullPointerException("qty" + "must be between 1 and " + MAX_QUANTITY);
+         }
         this.qty = qty;
     }
 

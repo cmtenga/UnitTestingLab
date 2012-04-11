@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- *
+ *JUnit for all classes 
  * @author Cecilia Mtenga, cmtenga@my.wctc.edu
  */
 @RunWith(Suite.class)
